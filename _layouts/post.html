@@ -8,10 +8,9 @@ layout: default
   {{ content }}
 </div>
 
-{% if page.comments %}
 <div id="disqus_thread"></div>
     <script type="text/javascript">
-        var disqus_shortname = 'dwikar'; // required: replace example with your forum shortname
+        var disqus_shortname = 'dwikar';
         // var disqus_developer = 1; // Comment out when the site is live
         var disqus_identifier = "{{ page.url }}";
 
@@ -24,7 +23,6 @@ layout: default
     </script>
     <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
     <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
-{% endif %}
 
 <div class="related">
   <h2>Related Posts</h2>
