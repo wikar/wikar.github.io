@@ -9,6 +9,7 @@
 <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
 
 <script type="text/javascript">
-	function getIFrameDocument(iframe) { return iframe.contentDocument || iframe.contentWindow.document; }
-	getIFrameDocument(document.getElementById("twitter-widget-0")).document.getElementById("twitter-widget-0").style.maxWidth = "100%";
+	var iframe = document.getElementById("twitter-widget-0");
+	var innerdoc = iframe.contentDocument || iframe.contentWindow.document;
+	innerdoc.getElementById("twitter-widget-0").style.maxWidth = "100%";
 </script>
