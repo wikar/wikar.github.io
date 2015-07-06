@@ -7,7 +7,7 @@
 
 <a class="twitter-timeline" href="https://twitter.com/danielwikar" data-widget-id="617953923614310400">Tweets by @danielwikar</a>
 <script>
-	var promise = Promise.resolve(!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script", "twitter-wjs"));
+	var promise = Promise.all(!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script", "twitter-wjs"));
 	
 	promise.then(function(result) {
   		var iframe = document.getElementById("twitter-widget-0");
