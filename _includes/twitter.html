@@ -15,7 +15,7 @@
 	// 	innerdoc.getElementById("twitter-widget-0").style.maxWidth = "100%";
 	// }, function() { alert("Nay!"); });
 	!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script", "twitter-wjs");
-	!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],script="var iframe = document.getElementById('twitter-widget-0'); var innerdoc = iframe.contentDocument || iframe.contentWindow.document; innerdoc.getElementById('twitter-widget-0').style.maxWidth = '100%';";js=d.createElement(s);js.id=id;js.textContent=script;fjs.parentNode.insertAfter(js,fjs);}(document,"script", "twitter-iframe-width");
+	!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],script="var iframe = document.getElementById('twitter-widget-0'); var innerdoc = iframe.contentDocument || iframe.contentWindow.document; innerdoc.getElementById('twitter-widget-0').style.maxWidth = '100%';";js=d.createElement(s);js.id=id;js.textContent=script;fjs.parentNode.insertBefore(js,fjs.nextSibling);}(document,"script", "twitter-iframe-width");
 </script>
 
 <script type="text/javascript">
