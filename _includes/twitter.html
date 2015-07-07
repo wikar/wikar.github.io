@@ -8,7 +8,7 @@
 <a class="twitter-timeline" href="https://twitter.com/danielwikar" data-widget-id="617953923614310400">Tweets by @danielwikar</a>
 
 <script>
-	function loadScript(url, id, success, failure) {
+	function loadScript(url, id) {
 		var scriptPromise = new Promise(function(resolve, reject) {
 			// Create a new script tag
 			var script = document.createElement('script');
@@ -29,7 +29,7 @@
 			document.body.appendChild(script);
 		});
 
-		scriptPromise
+		return scriptPromise;
 	}
 	
 	// Load a script
