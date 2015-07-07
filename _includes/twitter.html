@@ -36,10 +36,10 @@
 	loadScript('http://platform.twitter.com/widgets.js', 'twitter-wjs').then(function(value) {
 		// Resolved
 		var iframe = document.getElementById("twitter-widget-0");
-		var innerdoc = iframe.contentDocument || iframe.contentWindow.document;
-		innerdoc.addEventListener('load', function(event) {
+		iframe.addEventListener('load', function(event) {
+			var innerdoc = iframe.contentDocument || iframe.contentWindow.document;
     		innerdoc.getElementById("twitter-widget-0").style.maxWidth = "100%";
-  		});
+  		}, false);
 	}, function(value) {
 		// Rejected
 		console.error('Script not found:', value)
