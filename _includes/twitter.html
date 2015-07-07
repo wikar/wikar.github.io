@@ -37,7 +37,9 @@
 		// Resolved
 		var iframe = document.getElementById("twitter-widget-0");
 		var innerdoc = iframe.contentDocument || iframe.contentWindow.document;
-		innerdoc.getElementById("twitter-widget-0").style.maxWidth = "100%";
+		innerdoc.addEventListener("DOMContentLoaded", function(event) {
+    		innerdoc.getElementById("twitter-widget-0").style.maxWidth = "100%";
+  		});
 	}, function(value) {
 		// Rejected
 		console.error('Script not found:', value)
