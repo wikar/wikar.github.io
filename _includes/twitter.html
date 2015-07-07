@@ -1,14 +1,40 @@
-
 <a class="twitter-timeline" href="https://twitter.com/danielwikar" data-widget-id="617953923614310400">Tweets by @danielwikar</a>
 <script>
-	var promise = Promise.resolve(!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script", "twitter-wjs"));
+	function loadScript(url, id) {
+		var scriptPromise = new Promise(function(resolve, reject) {
+			// Create a new script tag
+			var script = document.createElement('script');
+			// Use the url argument as source attribute
+			script.src = url;
 	
-	promise.then(function(result) {
+			// Call resolve when it’s loaded
+			script.addEventListener('load', function() {
+				resolve(url);
+			}, false);
+	
+			// Reject the promise if there’s an error
+			script.addEventListener('error', function() {
+				reject(url);
+			}, false);
+	
+			// Add it to the body
+			document.body.appendChild(script);
+		});
+
+		return scriptPromise;
+	}
+	
+	// Load a script
+	loadScript('http://platform.twitter.com/widgets.js', 'twitter-wjs').then(function(value) {
+		// Resolved
 		var css = ".timeline{ max-width:100% !important; }";
   		var iframe = document.getElementById("twitter-widget-0");
 		var innerdoc = iframe.contentDocument || iframe.contentWindow.document;
-		innerdoc.getElementByTagName('style').contentText += css;
-	}, function(reject) {
-		console.log("Twitter resize failed. " + reject)
+		var style = innerdoc.createElement(“style”);
+		style.contentText = css;
+		innerdoc.getElementByTagName('head').appendChild(style);
+	}, function(value) {
+		// Rejected
+		console.error('Script not found:', value)
 	});
 </script>
