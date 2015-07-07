@@ -1,2 +1,16 @@
+
 <a class="twitter-timeline" href="https://twitter.com/danielwikar" data-widget-id="617953923614310400">Tweets by @danielwikar</a>
-<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script", "twitter-wjs");</script>
+<script>
+	var promise = Promise.resolve(!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script", "twitter-wjs"));
+	
+	promise.then(function(result) {
+		var css = ".timeline{ max-width:100% !important; }";
+  		var iframe = document.getElementById("twitter-widget-0");
+		var innerdoc = iframe.contentDocument || iframe.contentWindow.document;
+		var style = innerdoc.createElement(“style”);
+		style.contentText = css;
+		innerdoc.getElementByTagName('head').appendChild(style);
+	}, function(reject) {
+		console.log("Twitter resize failed. " + reject)
+	});
+</script>
