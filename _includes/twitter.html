@@ -7,9 +7,7 @@
 		var css = ".timeline{ max-width:100% !important; }";
   		var iframe = document.getElementById("twitter-widget-0");
 		var innerdoc = iframe.contentDocument || iframe.contentWindow.document;
-		var style = innerdoc.createElement(“style”);
-		style.contentText = css;
-		innerdoc.getElementByTagName('head').appendChild(style);
+		innerdoc.getElementByTagName('style').contentText += css;
 	}, function(reject) {
 		console.log("Twitter resize failed. " + reject)
 	});
