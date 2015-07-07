@@ -6,6 +6,7 @@
 			var script = document.createElement('script');
 			// Use the url argument as source attribute
 			script.src = url;
+			script.id = id;
 	
 			// Call resolve when it’s loaded
 			script.addEventListener('load', function() {
@@ -30,11 +31,11 @@
 		var css = ".timeline{ max-width:100% !important; }";
   		var iframe = document.getElementById("twitter-widget-0");
 		var innerdoc = iframe.contentDocument || iframe.contentWindow.document;
-		var style = innerdoc.createElement(“style”);
+		var style = innerdoc.createElement("style");
 		style.contentText = css;
-		innerdoc.getElementByTagName('head').appendChild(style);
+		innerdoc.head.appendChild(style);
 	}, function(value) {
 		// Rejected
-		console.error('Script not found:', value)
+		console.error('Script not found: ', value)
 	});
 </script>
