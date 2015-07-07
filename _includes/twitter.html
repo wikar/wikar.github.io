@@ -6,7 +6,44 @@
 </style>
 
 <a class="twitter-timeline" href="https://twitter.com/danielwikar" data-widget-id="617953923614310400">Tweets by @danielwikar</a>
+
 <script>
+	function loadScript(url, id, success, failure) {
+		var scriptPromise = new Promise(function(resolve, reject) {
+			// Create a new script tag
+			var script = document.createElement('script');
+			// Use the url argument as source attribute
+			script.src = url;
+	
+			// Call resolve when it’s loaded
+			script.addEventListener('load', function() {
+				resolve(url);
+			}, false);
+	
+			// Reject the promise if there’s an error
+			script.addEventListener('error', function() {
+				reject(url);
+			}, false);
+	
+			// Add it to the body
+			document.body.appendChild(script);
+		});
+
+		scriptPromise
+	}
+	
+	// Load a script
+	loadScript('http://platform.twitter.com/widgets.js', 'twitter-wjs').then(function(value) {
+		// Resolved
+		var iframe = document.getElementById("twitter-widget-0");
+		var innerdoc = iframe.contentDocument || iframe.contentWindow.document;
+		innerdoc.getElementById("twitter-widget-0").style.maxWidth = "100%";
+	}, function(value) {
+		// Rejected
+		console.error('Script not found:', value)
+	});
+	
+	
 	// var promise = Promise.resolve(!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script", "twitter-wjs"));
 	// 
 	// promise.then(function(result) {
@@ -14,8 +51,8 @@
 	// 	var innerdoc = iframe.contentDocument || iframe.contentWindow.document;
 	// 	innerdoc.getElementById("twitter-widget-0").style.maxWidth = "100%";
 	// }, function() { alert("Nay!"); });
-	!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script", "twitter-wjs");
-	!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],script="var iframe = document.getElementById('twitter-widget-0'); var innerdoc = iframe.contentDocument || iframe.contentWindow.document; innerdoc.getElementById('twitter-widget-0').style.maxWidth = '100%';";js=d.createElement(s);js.id=id;js.textContent=script;fjs.parentNode.insertBefore(js,fjs.nextSibling);}(document,"script", "twitter-iframe-width");
+	// !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script", "twitter-wjs");
+	// !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],script="var iframe = document.getElementById('twitter-widget-0'); var innerdoc = iframe.contentDocument || iframe.contentWindow.document; innerdoc.getElementById('twitter-widget-0').style.maxWidth = '100%';";js=d.createElement(s); js.id=id;js.textContent=script;fjs.parentNode.insertBefore(js,fjs.nextSibling);}(document,"script", "twitter-iframe-width");
 </script>
 
 <script type="text/javascript">
