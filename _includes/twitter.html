@@ -36,7 +36,7 @@
 	loadScript('http://platform.twitter.com/widgets.js', 'twitter-wjs').then(function(value) {
 		// Resolved
 		var iframe = document.getElementById("twitter-widget-0");
-		iframe.addEventListener("load", function() {
+		document.addEventListener("load", function() {
 			var innerdoc = iframe.contentDocument || iframe.contentWindow.document;
 			innerdoc.addEventListener("load", function() {
 	    		innerdoc.getElementById("twitter-widget-0").style.maxWidth = "100%";
