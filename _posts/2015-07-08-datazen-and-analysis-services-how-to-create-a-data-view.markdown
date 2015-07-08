@@ -7,7 +7,7 @@ categories: [Datazen]
 ---
 #Background
 
-Datazen supports Analysis Services as a data source but creating the data views isn't as straight forward as one could expect. The details on how to write queries against Analysis Services are pretty scarce in the official documentation. The following is written in the section about [Data Providers](http://www.datazen.com/docs/?article=server/data_source_types). 
+Datazen supports Analysis Services as a data source but creating the data views isn't as straight forward as one could expect. Details on how to write queries against Analysis Services are pretty scarce in the official documentation. The following is written in the section about [Data Providers](http://www.datazen.com/docs/?article=server/data_source_types). 
 
 >Data View Query -The MDX query to perform. Must return a single table of data. Any Dimension hierarchy which needs to be returned as part of the view must be expressed as a defined Member in the MDX Query.
 
