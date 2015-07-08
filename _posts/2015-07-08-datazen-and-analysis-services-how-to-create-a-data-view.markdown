@@ -11,7 +11,7 @@ Datazen supports Analysis Services as a data source but creating the data views 
 
 >Data View Query -The MDX query to perform. Must return a single table of data. Any Dimension hierarchy which needs to be returned as part of the view must be expressed as a defined Member in the MDX Query.
 
-This was still not crystal clear to me and it took a couple of tries to achieve the expected result set. Based on my experiences I have written a brief tutorial of a working query below using Adventure Works.
+This was still not crystal clear to me and it took a couple of tries to achieve the expected result set. Based on my experiences I wrote a brief tutorial on creating a working query below using Adventure Works.
 
 #Basic query
 
