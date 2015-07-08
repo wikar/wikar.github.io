@@ -15,7 +15,7 @@ This was still not crystal clear to me and it took a couple of tries to achieve 
 
 #Basic query
 
-Using a regular query showing the sales by month with the measure on the column axis and the dimension on the rows.
+I started off by using a regular query showing the sales by month with the measure on the column axis and the dimension on the rows.
 
 ```
 SELECT { [Measures].[Reseller Sales Amount] } ON COLUMNS
@@ -54,6 +54,6 @@ Now we also have the months in Datazen Designer ready to be used in the dashboar
 
 ![datazen-publisher-with-measure-member-expression](https://raw.githubusercontent.com/wikar/wikar.github.io/master/assets/images/2015-07-08-datazen-and-analysis-services-how-to-create-a-data-view/7-datazen-publisher-with-measure-member-expression.png)
 
-I hope this will help someone get started using Datazen with Analysis Services!
+I hope this will help someone get started using Datazen with Analysis Services.
 
 For more information on defining query-scoped members see this article on MSDN: [Creating Query-Scoped Calculated Members (MDX)](https://msdn.microsoft.com/en-us/library/ms146017.aspx)
