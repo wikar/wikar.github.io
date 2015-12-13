@@ -3,7 +3,7 @@ published: true
 title: Dynamics AX7 (Rainier) - BI/Analytics Preview
 layout: post
 tags: [dynamics ax, ax, ax7, rainier, bi, analytics]
-categories: [Dynamics AX]
+categories: [DynamicsAX]
 ---
 
 It has been known for a while that Dynamics AX7 (Codename Rainier) would come with significant changes to the BI & Analytics features. Not much has been known about the details but about a week ago Microsoft released a video revealing some of the upcoming news. Thanks to Nurlin Aberra, [DynaAX](http://www.dynaax.se), for the tip.
