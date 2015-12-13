@@ -44,7 +44,7 @@ Developer view in Visual Studio. Notice the options for both InMemoryRealTime an
 
 ![dax7-bi-preview-06](https://raw.githubusercontent.com/wikar/wikar.github.io/master/assets/images/2015-12-12-dynamics-ax-7-bi-preview/dax7-bi-preview-06.png)
 
-Agree to all the boxes in red. Good to see that the AX team acknowledging and aim to fill the gaps.
+Agree to all the boxes in red. Good to see the AX team acknowledging and aiming to fill the gaps.
 
 ### Aggregate models - Deployment choices
 
