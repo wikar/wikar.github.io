@@ -32,7 +32,7 @@ Reporting still feels a bit scattered. Interesting to see whether the new BI fea
 
 ![dax7-bi-preview-04](https://raw.githubusercontent.com/wikar/wikar.github.io/master/assets/images/2015-12-12-dynamics-ax-7-bi-preview/dax7-bi-preview-04.png)
 
-"Aggregate Measurements" becoming an alternative to the SSAS cubes. Initally it was unclear which underlying technology is actually used (In-memory OLTP, Tabular Models, etc) but during the Q&A it was "demystified" by talking about the SQL Server columnstore indexes and read-only secondaries. I have a feel this can't be all to it (same Aggregate Measurments deployed twice to enable Excel self-service analytics?) and it require further detailing ahead.
+"Aggregate Measurements" becoming an alternative to the SSAS cubes. Initally it was unclear which underlying technology is actually used (In-memory OLTP, Tabular Models, etc) but during the Q&A it was "demystified" by talking about the SQL Server columnstore indexes and read-only secondaries. I have a feel this can't be all to it (same Aggregate Measurements deployed twice to enable Excel self-service analytics?) and it require further detailing ahead.
 
 ### In-Memory Real-time vs SSAS Cube
 
