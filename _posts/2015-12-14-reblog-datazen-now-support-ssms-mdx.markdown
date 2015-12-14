@@ -1,6 +1,6 @@
 ---
 published: true
-title: Reblog: Datazen now able to use SSMS-generated MDX
+title: Reblog - Datazen now able to use MDX generated with SSMS
 layout: post
 tags: [datazen, ssas, analysis-services, multidimensional, olap, mdx]
 categories: [Datazen]
