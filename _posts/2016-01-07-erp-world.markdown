@@ -8,7 +8,7 @@ categories: [ERP]
 
 ![erp-world](https://raw.githubusercontent.com/wikar/wikar.github.io/master/assets/images/2016-01-07-erp-world/erp-world.png)
 
-During my career I have encountered numerous different ERP systems, vendors, consultants and specialist. Something that has struck me as common for many (but not all) ERP professionals is the lack of understanding for the need of other enterprise applications and/or integration of the same. Many also seem to favor customizations within the ERP instead rather than making it a part of a service-oriented landscape.
+During my career I have encountered numerous different ERP systems, vendors, consultants and specialists. Something that has struck me as common for many (but not all) ERP professionals is the lack of understanding for the need of other enterprise applications and/or integration of the same. Many also seem to favor customizations within the ERP rather than making it a part of a service-oriented landscape.
 
 > "Documentation? Well, we do have some ER diagrams but they're not complete or up to date."
 
