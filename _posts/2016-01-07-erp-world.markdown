@@ -1,0 +1,23 @@
+---
+published: true
+title: ERP World View
+layout: post
+tags: [dynamics ax, dynamics nav, navision, sap, movex, system21, jeeves, jd edwards, oracle]
+categories: [ERP]
+---
+
+![erp-world](https://raw.githubusercontent.com/wikar/wikar.github.io/master/assets/images/2016-01-07-erp-world/erp-world.png)
+
+During my career I have encountered numerous different ERP systems, vendors, consultants and specialist. Something that has struck me as common for many (but not all) ERP professionals is the lack of understanding for the need of other enterprise applications and/or integration of the same. Many also seem to favor customizations within the ERP instead rather than making it a part of a service-oriented landscape.
+
+> "Documentation? Well, we do have some ER diagrams but they're not complete or up to date."
+
+> "Why would you like to extract data <u>out</u> from the ERP?"
+
+> "Services? Interfaces? We'd suggest you to take a look in the database if you really need some of our data."
+
+> "We already have that in our ERP, not as good but it would still be better to use that."
+
+> "Integrate? Wouldn't it be better to just migrate the data into the ERP?"
+
+Anyone with similar experiences or maybe the opposite?
