@@ -1,5 +1,5 @@
 excerpt_separator: ""
-highlighter: rogue
+highlighter: rouge
 markdown: kramdown
 url: http://wikar.se
 title: Daniel Wikar
