@@ -28,4 +28,4 @@ For some nuance it's hard to be a *Thinker* in every single domain but there are
 
 *So, are you a Thinker or a Repeater? How about your manager? Your colleagues?*
 
-Crossposted @ https://www.linkedin.com/pulse/thinkers-vs-repeaters-daniel-wikar-1f/
+Crossposted @ [LinkedIn](https://www.linkedin.com/pulse/thinkers-vs-repeaters-daniel-wikar-1f/)
