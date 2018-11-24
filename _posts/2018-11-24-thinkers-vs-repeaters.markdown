@@ -26,4 +26,4 @@ Sometimes it's easy and sometimes it's really hard to distinguish a *Repeater* f
 
 For some nuance it's hard to be a *Thinker* in every single domain but there are clearly severe drawbacks in being a *Repeater* within your main profession, both for yourself and for the actual *Thinkers* around you.
 
-*So, are you a *Thinker* or a *Repeater*? How about your manager? Your colleagues?*
+*So, are you a Thinker or a Repeater? How about your manager? Your colleagues?*
