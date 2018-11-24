@@ -10,7 +10,7 @@ categories: [Thinking]
 
 During my career I have come across two different groups of people, as always there's really a spectra between the two but to be able to clearly describe the distinguishable differences I'll focus on the extremes; *Thinkers* and *Repeaters* 
 
-So what's the characteristics of a *Thinker*? They think for themselves, have a mind of their own and have the ability to create new creative/critical thoughts out of thin air based on their own experience and competence. Nothing is taken for granted and they don't trust blindly, everything has to be proven and evaluated. They welcome external input for inspiration, challenegment or enlightenment - but this is something they consciously evaluate to validate, oppose or reshape their own thoughts.
+So what's the characteristics of a *Thinker*? They think for themselves, have a mind of their own and have the ability to create new creative/critical thoughts out of thin air based on their own experience and competence. Nothing is taken for granted and they don't trust blindly, everything has to be proven and evaluated. They welcome external input for inspiration, challengement or enlightenment - but this is something they consciously evaluate to validate, oppose or reshape their own thoughts.
 
 >"Knowledge has to be improved, challenged, and increased constantly, or it vanishes." - Peter F. Drucker
 
