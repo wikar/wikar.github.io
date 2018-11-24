@@ -14,7 +14,7 @@ So what's the characteristics of a *Thinker*? They think for themselves, have a 
 
 >"Knowledge has to be improved, challenged, and increased constantly, or it vanishes." - Peter F. Drucker
 
-The *Repeaters* on the other hand can seem and sound very initiated, they can be charismatic and well-spoken but the actual words coming out of their mouths are based not on thoughts of their own but rather the words of other *Thinkers* or *Repeaters*. They depend on other people to do the thinking for them to repeat and present as their own, be it colleagues, consultants or other external parties with or without agendas of their own.
+The *Repeaters* on the other hand can seem and sound very initiated, they can be charismatic and well-spoken but the actual words coming out of their mouths are based not on thoughts of their own but rather the words of other *Thinkers* or *Repeaters*. They depend on other people to do the thinking for them to repeat and present as their own, be it colleagues, subordinates, consultants or other external parties with or without agendas of their own.
 
 *Repeaters* have a hard time (often unknowingly) separating right from wrong, A from B, facts from opinions, helpful thoughts from hidden agendas, etc.
 
