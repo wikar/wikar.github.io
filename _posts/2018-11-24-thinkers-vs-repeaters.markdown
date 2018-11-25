@@ -18,9 +18,9 @@ The *Repeaters* on the other hand can seem and sound very initiated, they can be
 
 *Repeaters* have a hard time (often unknowingly) separating right from wrong, A from B, facts from opinions, helpful thoughts from hidden agendas, etc.
 
-*Repeaters* repeating the words of other *Repeaters* often end up in a 'whispering game' where actual initial thought from a *Thinker* is lost or messed up along the way.
+*Repeaters* repeating the words of other *Repeaters* often end up in a 'whispering game' where the actual initial thought from a *Thinker* is lost or messed up along the way.
 
-The lack of true understanding can even make the *Repeaters* claims end up in a complete jumbled mess where the 'thought' in one sentence is opposed already in the next (again unknowingly).
+The lack of true understanding can even make the *Repeaters'* claims end up in a complete jumbled mess where the 'thought' in one sentence is opposed already in the next (again unknowingly).
 
 Sometimes it's easy and sometimes it's really hard to distinguish a *Repeater* from a *Thinker*. There are professional and clever *Repeaters* who have built their whole career in being experts at repeating other's thoughts as their own and doing it really well.
 
