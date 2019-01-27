@@ -6,7 +6,7 @@ tags: [learning, react, redux. express, graphql, chart.js, node, docker, azure, 
 categories: [Learning]
 ---
 
-[lightbulb](https://raw.githubusercontent.com/wikar/wikar.github.io/master/assets/images/2019-01-21-things-to-learn-in-2019-p1/lightbulb.jpg)
+![lightbulb](https://raw.githubusercontent.com/wikar/wikar.github.io/master/assets/images/2019-01-21-things-to-learn-in-2019-p1/lightbulb.jpg)
 
 The list below are my current goals to learn during the year (at least to an intermediate level).
 
