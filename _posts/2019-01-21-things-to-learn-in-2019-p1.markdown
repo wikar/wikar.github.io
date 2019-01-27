@@ -1,8 +1,8 @@
 ---
-published: false
+published: true
 title: Things to learn in 2019 - Part 1
 layout: post
-tags: [learning, react, redux. express, graphql, chart.js, node, docker, azure, blazor, tensorflow, electron]
+tags: [learning, react, redux. express, graphql, chart.js, node, docker, azure, mern, codecademy, packt]
 categories: [Learning]
 ---
 
