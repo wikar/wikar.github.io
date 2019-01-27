@@ -27,6 +27,6 @@ Well, basically I would like to get up to scratch building modern web apps using
 
 Also adding a few .NET backend components to be able create analytical content with Azure Functions and ML.NET or Azure ML. I like the idea of a "headless architecture" where the front end (presentation) is separated/decoupled from the back end (content exposed through APIs).
 
-I will try to combine most of the technologies from the list into one single project since that's the way I usually learn the best. Sources of learning are usually the official documentations of course but I can also recommend [Codecademy](https://www.codecademy.com/)'s interactive online courses and [Packt](https://www.packtpub.com/)'s books and videos (runs occasional sales where you can really make a deal).
+I will try to combine most of the technologies from the list into one single project since that's the way I usually learn the best. Sources of learning are usually the official documentations of course, but I can also recommend [Codecademy](https://www.codecademy.com/)'s interactive online courses and [Packt](https://www.packtpub.com/)'s books and videos (runs occasional sales where you can really make a deal).
 
 Also writing this as a part 1 since I aim to create a follow-up (or many) during the year with my learning experiences.
