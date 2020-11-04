@@ -6,6 +6,8 @@ tags: [excel, data mining, sql server, ssas]
 categories: [Excel]
 ---
 
+**Edit:** This has also been confirmed working in Excel 2019 / Office 365.
+
 Ever since the release of Excel 2016 a compatible SQL Server Data Mining Add-in has been missing. There has been numerous requests for Microsoft to release an official update but so far this hasn't happened.
 
 Having Excel 2013 and Excel 2016 installed side-by-side has been used as a workaround to get the Excel 2013 DM Add-In semi-working also for Excel 2016. The following registry hack is allowing the otherwise blocked installation to proceed for Excel 2016 without the need for an actual Excel 2013 installation. 
