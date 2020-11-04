@@ -5,7 +5,7 @@ layout: post
 tags: [datazen, ssas, analysis-services, multidimensional, olap, mdx]
 categories: [Datazen]
 ---
-#Background
+### Background
 
 [Datazen](http://www.datazen.com) supports Analysis Services as a data source but creating the data views isn't as straight forward as one could expect. Details on how to write queries against Analysis Services are pretty scarce in the official documentation but the following is written in the section about [Data Providers](http://www.datazen.com/docs/?article=server/data_source_types). 
 
@@ -13,7 +13,7 @@ categories: [Datazen]
 
 This was still not crystal clear to me and it took a couple of tries to achieve the expected result set. Based on my experiences I wrote a brief tutorial on creating a working query below using Adventure Works.
 
-#Basic query
+### Basic query
 
 I started off by using a regular query showing the sales by month with the measure on the column axis and the dimension on the rows.
 
@@ -33,7 +33,7 @@ And as a result the dimension members isn't accessible as a column in Datazen De
 
 ![datazen-publisher-without-measure-member-expression](https://raw.githubusercontent.com/wikar/wikar.github.io/master/assets/images/2015-07-08-datazen-and-analysis-services-how-to-create-a-data-view/4-datazen-publisher-without-measure-member-expression.png)
 
-#Query with Member
+### Query with Member
 
 As stated in the documentation Datazen expects to receive everything as members, even the dimensions. In order to include also the dimension members in the result set we'll have to rewrite the query as below.
 
