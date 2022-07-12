@@ -10,7 +10,7 @@ There are numerous ways to get [netboot.xyz](https://netboot.xyz/) running as a 
 
 Inspired by [this forum post](https://forum.openwrt.org/t/dnsmasq-pxe-boot-using-netboot-xyz/56075/4) but I couldn't get it to boot straight from http so instead I did the following.
 
-### 1. Created a tfpt-folder in the root of OpenWRT
+### 1. Created a tfpt-directory in the root of OpenWRT
 
 ```
 mkdir tftp
