@@ -56,7 +56,7 @@ IPv6 Settings. Untick this box if ticked.
 
 ![local-ipv6-dns-server](https://raw.githubusercontent.com/wikar/wikar.github.io/master/assets/images/2022-07-12-openwrt-netbootxyz/local-ipv6-dns-server.png)
 
-Identified through [this thread](https://api.mtr.pub/netbootxyz/netboot.xyz/issues/283).
+Identified through [this thread](https://github.com/netbootxyz/netboot.xyz/issues/283).
 
 ### Done
 
