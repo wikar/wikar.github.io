@@ -10,13 +10,13 @@ There are numerous ways to get [netboot.xyz](https://netboot.xyz/) running as a 
 
 Inspired by [this forum post](https://forum.openwrt.org/t/dnsmasq-pxe-boot-using-netboot-xyz/56075/3) but I couldn't get it to boot straight from http so instead I did the following.
 
-#### 1. Created a tfpt-folder in the root
+### 1. Created a tfpt-folder in the root
 
 ```
 mkdir tftp
 ```
 
-#### 2. Downloaded netboot.xyz.kpxe and netboot.xyz.efi locally
+### 2. Downloaded netboot.xyz.kpxe and netboot.xyz.efi locally
 
 ```
 cd /tftp
@@ -24,7 +24,7 @@ curl http://boot.netboot.xyz/ipxe/netboot.xyz.kpxe -o netboot.xyz.kpxe
 curl http://boot.netboot.xyz/ipxe/netboot.xyz.efi -o netboot.xyz.efi
 ```
 
-#### 3. Modified /etc/dnsmasq.conf to act as TFTP server
+### 3. Modified /etc/dnsmasq.conf to act as TFTP server
 
 ```
 nano /etc/dnsmasq.conf
@@ -47,7 +47,7 @@ dhcp-boot=netboot.xyz.efi
 
 (Couldn't get the BIOS/EFI identification to work so I manually switched between netboot.xyz.kpxe and netboot.xyz.efi)
 
-#### 4. Finally a crucial but hard to find configuration change for OpenWRT
+### 4. Finally a crucial but hard to find configuration change for OpenWRT
 
 Disable the LAN interface to announce itself as a `Local IPv6 DNS server` which in turn somehow conflicted with the iPXE DNS lookup (even though booted in IPv4 mode).
 
@@ -58,6 +58,6 @@ IPv6 Settings. Untick this box if ticked.
 
 Identified through [this thread](https://api.mtr.pub/netbootxyz/netboot.xyz/issues/283).
 
-#### Done
+### Done
 
 Good luck!
