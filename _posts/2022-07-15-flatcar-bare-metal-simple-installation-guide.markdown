@@ -119,6 +119,6 @@ Then I modified config.yaml with the correct interface and transpiled again thro
 
 Now you should be able to ssh into your freshly installed [Flatcar Container Linux](https://flatcar-linux.org/) instance.
 
-Full Flatcar documentation is found [here](https://flatcar-linux.org/docs/latest).
+Full documentation is found [here](https://flatcar-linux.org/docs/latest).
 
 Good luck!
