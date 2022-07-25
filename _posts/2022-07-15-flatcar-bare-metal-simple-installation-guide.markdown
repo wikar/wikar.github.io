@@ -14,7 +14,7 @@ I setup this little step-by-step bare metal installation guide and to be able to
 
 Using your existing Linux/Docker instance create a password hash to be used in the config.yaml for Flatcar.
 
-```bash
+```shell
 docker container run --rm --interactive --tty fscm/mkpasswd --method=SHA-512 --rounds=4096 yourpassword
 ```
 
@@ -24,7 +24,7 @@ docker container run --rm --interactive --tty fscm/mkpasswd --method=SHA-512 --r
 
 I created a directory `/home/daniel/ignition` and this minimal `config.yaml`.
 
-```bash
+```shell
 nano config.yaml
 ```
 
@@ -55,7 +55,7 @@ networkd:
 
 ### 3. Transpile config.yaml into ignition.json
 
-```bash
+```shell
 cat config.yaml | docker run --rm -i ghcr.io/flatcar-linux/ct:latest > ignition.json
 ```
 
@@ -65,7 +65,7 @@ cat config.yaml | docker run --rm -i ghcr.io/flatcar-linux/ct:latest > ignition.
 
 Setup a local webserver to host the ignition.json file and serve this during the Flatcar installation. I decided to share the directory `/home/daniel/ignition` using port 7080 in order to not conflict with an existing webserver.
 
-```bash
+```shell
 docker run --name nginx-ignition -v /home/daniel/ignition:/usr/share/nginx/html:ro -p 7080:80 -d nginx
 ```
 
@@ -79,19 +79,19 @@ Once booted you will automatically be logged into a shell on the console without
 
 Now it's time to transfer the ignition.json file locally using the webserver from [4](#4-setup-local-webserver).
 
-```bash
+```shell
 wget http://192.168.1.1:7080/ignition.json
 ```
 
 If you are unsure of your disk setup you can check this with...
 
-```bash
+```shell
 lsblk
 ```
 
 And you then perform the installation by running...
 
-```bash
+```shell
 sudo flatcar-install -d /dev/sda -i ignition.json
 ```
 
@@ -99,7 +99,7 @@ sudo flatcar-install -d /dev/sda -i ignition.json
 
 During my first installation I specified the wrong interface name (should have been `Name=enp0s25`) in the config.yaml and I haven't figured out how the automatic naming works so on my second try I ran...
 
-```bash
+```shell
 netstat -i
 ```
 

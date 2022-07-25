@@ -12,13 +12,13 @@ Inspired by [this forum post](https://forum.openwrt.org/t/dnsmasq-pxe-boot-using
 
 ### 1. Created a tfpt-directory in the root of OpenWRT
 
-```bash
+```shell
 mkdir tftp
 ```
 
 ### 2. Downloaded netboot.xyz.kpxe and netboot.xyz.efi locally
 
-```bash
+```shell
 cd /tftp
 curl http://boot.netboot.xyz/ipxe/netboot.xyz.kpxe -o netboot.xyz.kpxe
 curl http://boot.netboot.xyz/ipxe/netboot.xyz.efi -o netboot.xyz.efi
@@ -26,7 +26,7 @@ curl http://boot.netboot.xyz/ipxe/netboot.xyz.efi -o netboot.xyz.efi
 
 ### 3. Modified /etc/dnsmasq.conf to act as TFTP server
 
-```bash
+```shell
 nano /etc/dnsmasq.conf
 ```
 
@@ -41,7 +41,7 @@ tftp-root=/tftp
 dhcp-boot=netboot.xyz.efi
 ```
 
-```bash
+```shell
 /etc/init.d/dnsmasq restart
 ```
 
