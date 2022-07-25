@@ -97,7 +97,7 @@ sudo flatcar-install -d /dev/sda -i ignition.json
 
 ### 6. Network configuration (Optional)
 
-During my first installation I specified the wrong interface name (should have been `Name=enp0s25`) in the config.yaml and I haven't figured out how the automatic naming works so on my second try I ran...
+During my first installation I specified the wrong interface name (should have been `Name=enp0s25`) in the `config.yaml` and I haven't figured out how the automatic naming works so on my second try I ran...
 
 ```shell
 netstat -i
@@ -113,7 +113,7 @@ enp0s25          1500    58858      0    420 0         26959      0      0      
 lo              65536        0      0      0 0             0      0      0      0 LRU
 ```
 
-Then I modified config.yaml with the correct interface and transpiled again through step [3](#3-transpile-configyaml-into-ignitionjson) before installing [5](#5-local-installation).
+Then I modified `config.yaml` with the correct interface and transpiled again through step [3](#3-transpile-configyaml-into-ignitionjson) before installing [5](#5-local-installation).
 
 ### Done
 
