@@ -8,7 +8,7 @@ categories: [Flatcar]
 
 One of the main reasons I wanted to get [netboot.xyz](https://netboot.xyz/) up and running was to simplify installation of various linux machines and more specifically [Flatcar Container Linux](https://flatcar-linux.org/) which have really caught my interest as a minimal, immutable and always up-to-date container host. Kinvolk, the company behind Flatcar, was also aquired by Microsoft recently which piqued my curiousity even more.
 
-I setup this little step-by-step bare metal installation guide and to be able to follow this method you would need to have a spare Linux instance with Docker. I used my [OpenWRT](https://openwrt.org/) router once again but you could use [WSL2](https://docs.microsoft.com/en-us/windows/wsl/install), Raspberry Pi, Live Boot or whatever.
+I wrote up this little step-by-step bare metal installation guide and to be able to follow this method you would need to have a spare Linux instance with Docker. I used my [OpenWRT](https://openwrt.org/) router once again but you could use [WSL2](https://docs.microsoft.com/en-us/windows/wsl/install), a Raspberry Pi or whatever.
 
 ### 1. Create password
 
