@@ -6,9 +6,11 @@ tags: [flatcar, linux, docker, container, coreos, microsoft, netboot.xyz, pxe, i
 categories: [Flatcar]
 ---
 
-One of the main reasons I wanted to get [netboot.xyz](https://netboot.xyz/) up and running was to simplify installation of various linux machines and more specifically [Flatcar Container Linux](https://flatcar-linux.org/) which have really caught my interest as a minimal, immutable and always up-to-date container host. Kinvolk, the company behind Flatcar, was also aquired by Microsoft recently which piqued my curiousity even more.
+One of the main reasons I wanted to get [netboot.xyz](https://netboot.xyz/) up and running was to simplify installation of various linux machines and more specifically [Flatcar Container Linux](https://flatcar-linux.org/) which have really caught my interest as a minimal, immutable and always up-to-date container host.
 
-I wrote up this little step-by-step bare metal installation guide and to be able to follow this method you would need to have a spare Linux instance with Docker. I used my [OpenWRT](https://openwrt.org/) router once again but you could use [WSL2](https://docs.microsoft.com/en-us/windows/wsl/install), a Raspberry Pi or whatever.
+[Kinvolk](https://kinvolk.io/), the company behind Flatcar, was also [aquired by Microsoft](https://kinvolk.io/blog/2021/04/microsoft-acquires-kinvolk/) recently which piqued my curiousity even more.
+
+I wrote up this little step-by-step bare metal installation guide and to be able to follow this method you would need to have a spare Linux instance with Docker. I used my [OpenWRT](https://openwrt.org/) router once again but you could also use [WSL2](https://docs.docker.com/desktop/windows/wsl/) on Windows, a [Raspberry Pi with Docker](https://www.stewright.me/2022/01/install-docker-on-a-raspberry-pi-tutorial/) or whatever you prefer.
 
 ### 1. Create password
 
@@ -71,7 +73,7 @@ docker run --name nginx-ignition -v /home/daniel/ignition:/usr/share/nginx/html:
 
 ### 5. Local installation
 
-Boot into a live version of Flatcar either via [ISO](https://flatcar-linux.org/docs/latest/installing/bare-metal/booting-with-iso/) or [PXE](http://wikar.se/openwrt/2022/07/12/openwrt-netbootxyz.html).
+On your target machine boot into a live version of Flatcar either via [ISO](https://flatcar-linux.org/docs/latest/installing/bare-metal/booting-with-iso/) or [PXE](http://wikar.se/openwrt/2022/07/12/openwrt-netbootxyz.html).
 
 Using [netboot.xyz](https://netboot.xyz/) you can pass the ignition.json already during first boot but since we're going to do a local installation we can skip this step.
 
