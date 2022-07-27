@@ -15,7 +15,7 @@ I wrote up this little step-by-step bare metal installation guide and to be able
 Using your existing Linux/Docker instance create a password hash to be used in the config.yaml for Flatcar.
 
 ```shell
-docker container run --rm --interactive --tty fscm/mkpasswd --method=SHA-512 --rounds=4096 yourpassword
+docker run --rm --interactive --tty fscm/mkpasswd --method=SHA-512 --rounds=4096 yourpassword
 ```
 
 [https://www.flatcar.org/docs/latest/provisioning/cl-config/examples/#generating-a-password-hash](https://www.flatcar.org/docs/latest/provisioning/cl-config/examples/#generating-a-password-hash)
