@@ -73,7 +73,7 @@ docker run --name nginx-ignition -v /home/daniel/ignition:/usr/share/nginx/html:
 
 ### 5. Local installation
 
-On your target machine boot into a live version of Flatcar either via [ISO](https://flatcar-linux.org/docs/latest/installing/bare-metal/booting-with-iso/) or [PXE](http://wikar.se/openwrt/2022/07/12/openwrt-netbootxyz.html).
+On your target machine it is now time to boot into a live version of Flatcar either via [ISO](https://flatcar-linux.org/docs/latest/installing/bare-metal/booting-with-iso/) or [PXE](http://wikar.se/openwrt/2022/07/12/openwrt-netbootxyz.html).
 
 Using [netboot.xyz](https://netboot.xyz/) you can pass the ignition.json already during first boot but since we're going to do a local installation we can skip this step.
 
