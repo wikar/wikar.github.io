@@ -6,7 +6,7 @@ tags: [flatcar, linux, docker, container, coreos, microsoft, netboot.xyz, pxe, i
 categories: [Flatcar]
 ---
 
-One of the main reasons I wanted to get [netboot.xyz](https://netboot.xyz/) up and running was to simplify installation of various linux machines and more specifically [Flatcar Container Linux](https://flatcar-linux.org/) which have really caught my interest as a minimal, immutable and always up-to-date container host.
+One of the main reasons I wanted to get [netboot.xyz](http://wikar.se/openwrt/2022/07/12/openwrt-netbootxyz.html) up and running was to simplify installation of various linux machines and more specifically [Flatcar Container Linux](https://flatcar-linux.org/) which have really caught my interest as a minimal, immutable and always up-to-date container host.
 
 [Kinvolk](https://kinvolk.io/), the company behind Flatcar, was also [acquired by Microsoft](https://kinvolk.io/blog/2021/04/microsoft-acquires-kinvolk/) recently which piqued my curiosity even more.
 
