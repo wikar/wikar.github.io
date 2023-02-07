@@ -1,12 +1,12 @@
 ---
 published: true
-title: Install Data Mining Add-in In Excel 2016
+title: Install Data Mining Add-in In Excel
 layout: post
 tags: [excel, data mining, sql server, ssas]
 categories: [Excel]
 ---
 
-**Edit:** This has also been confirmed working in Excel 2019 / Office 365.
+**Edit:** This has also been confirmed working in Excel 2019 / 2021 / Office 365.
 
 Ever since the release of Excel 2016 a compatible SQL Server Data Mining Add-in has been missing. There has been numerous requests for Microsoft to release an official update but so far this hasn't happened.
 
