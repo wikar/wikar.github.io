@@ -6,9 +6,7 @@ tags: [radxa, linux, sbc, rock-4c-plus, docker, rsdk]
 categories: [Linux]
 ---
 
-# Radxa ROCK 4C+ Image Builder
-
-I've had issues getting the [Radxa ROCK 4C+](https://radxa.com/products/rock4/4cp/) to work based with the Armbian, DietPi and Radxa standard images for Debian Bookworm. Therefore I created this script to build an image via [rsdk](https://github.com/RadxaOS-SDK/rsdk) from within a Docker container.
+I've had various issues (blank screen, no display signal, no blue LED, etc) getting the [Radxa ROCK 4C+](https://radxa.com/products/rock4/4cp/) to work based with the Armbian, DietPi and Radxa standard images for Debian Bookworm. Therefore I created this script to build an image via [rsdk](https://github.com/RadxaOS-SDK/rsdk) from within a Docker container.
 
 Successfully tested with the Radxa ROCK 4C+ but could/should also work with other boards compatible with rsdk.
 
