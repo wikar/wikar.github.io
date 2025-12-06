@@ -61,8 +61,33 @@ List all available products:
 - `-e, --edition` - Edition variant (optional, default from config)
 - `-o, --output` - Output directory (default: ./output)
 - `-n, --name` - Custom image name (default: product-suite-edition-date.img)
+- `-r, --repo` - rsdk repository URL (default: official RadxaOS-SDK/rsdk)
 - `-l, --list` - List available products
 - `-h, --help` - Show help
+
+## Using a Custom Fork
+
+To add support for custom editions or boards:
+
+1. Fork https://github.com/RadxaOS-SDK/rsdk
+2. Edit the fork with your changes, e.g. `src/share/rsdk/configs/products.json`
+3. Build using your fork:
+
+```bash
+./rsdk-docker-build.sh \
+  --product rock-4c-plus \
+  --edition cli \
+  --repo https://github.com/yourusername/rsdk.git
+```
+
+Example: Adding CLI edition to rock-4c-plus:
+```json
+{
+    "product": "rock-4c-plus",
+    "supported_suite": ["bookworm"],
+    "supported_edition": ["kde", "cli"]
+}
+```
 
 ## Notes
 
@@ -70,3 +95,4 @@ List all available products:
 - Uses QEMU for ARM cross-compilation
 - Runs entirely in Docker containers
 - Requires privileged mode for loop devices
+- Default repository is official RadxaOS-SDK/rsdk

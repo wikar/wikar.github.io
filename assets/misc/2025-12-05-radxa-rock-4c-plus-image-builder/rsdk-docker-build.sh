@@ -21,6 +21,7 @@ Options:
     -e, --edition EDITION   Edition (optional, e.g., cli, kde)
     -o, --output DIR        Output directory (default: ./output)
     -n, --name NAME         Image name (default: <product>-<suite>-<edition>-<date>.img)
+    -r, --repo URL          rsdk repository URL (default: https://github.com/RadxaOS-SDK/rsdk.git)
     -l, --list              List available products
     -h, --help              Show this help
 
@@ -28,6 +29,7 @@ Example:
     $0 --product rock-4c-plus
     $0 --product rock-5b --suite bookworm --edition kde
     $0 --product rock-4c-plus --name my-custom-image.img
+    $0 --product rock-4c-plus --edition cli --repo https://github.com/yourusername/rsdk.git
 
 Note: Both .img and .img.xz files are created automatically
 EOF
@@ -39,6 +41,7 @@ PRODUCT=""
 SUITE=""
 EDITION=""
 IMAGE_NAME=""
+RSDK_REPO="https://github.com/RadxaOS-SDK/rsdk.git"
 LIST_PRODUCTS=false
 
 while [[ $# -gt 0 ]]; do
@@ -48,6 +51,7 @@ while [[ $# -gt 0 ]]; do
         -e|--edition) EDITION="$2"; shift 2 ;;
         -o|--output) OUTPUT_DIR="$2"; shift 2 ;;
         -n|--name) IMAGE_NAME="$2"; shift 2 ;;
+        -r|--repo) RSDK_REPO="$2"; shift 2 ;;
         -l|--list) LIST_PRODUCTS=true; shift ;;
         -h|--help) usage ;;
         *) log_error "Unknown option: $1"; usage ;;
@@ -56,10 +60,10 @@ done
 
 # List products
 if [ "$LIST_PRODUCTS" = true ]; then
-    log_info "Fetching available products..."
+    log_info "Fetching available products from: $RSDK_REPO"
     docker run -it --rm debian:bookworm bash -c "
         apt-get update && apt-get install -y git jq >/dev/null 2>&1
-        git clone --recurse-submodules https://github.com/RadxaOS-SDK/rsdk.git >/dev/null 2>&1
+        git clone --recurse-submodules $RSDK_REPO rsdk >/dev/null 2>&1
         cd rsdk && cat src/share/rsdk/configs/products.json | jq '.'
     "
     exit 0
@@ -96,6 +100,7 @@ docker run -it --rm \
     debian:bookworm \
     bash -c "
         set -e
+        export DEBIAN_FRONTEND=noninteractive
         
         echo 'Installing dependencies...'
         apt-get update && apt-get install -y \
@@ -110,7 +115,7 @@ docker run -it --rm \
         export PATH=\"/usr/bin:\$PATH\"
         
         echo 'Cloning rsdk...'
-        git clone --recurse-submodules https://github.com/RadxaOS-SDK/rsdk.git
+        git clone --recurse-submodules $RSDK_REPO
         cd rsdk
         
         echo 'Installing devcontainer CLI...'
