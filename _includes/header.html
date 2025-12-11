@@ -60,7 +60,8 @@
     function getTheme() {
       const stored = localStorage.getItem('theme');
       if (stored) return stored;
-      return prefersDark.matches ? 'dark' : 'light';
+      // Default to dark, unless user explicitly prefers light
+      return prefersDark.matches === false ? 'light' : 'dark';
     }
     
     function setTheme(theme) {
@@ -68,15 +69,13 @@
       localStorage.setItem('theme', theme);
     }
     
-    // Set initial theme (light is default in CSS, only apply if dark)
+    // Set initial theme (dark is default)
     const initialTheme = getTheme();
-    if (initialTheme === 'dark') {
-      setTheme('dark');
-    }
+    setTheme(initialTheme);
     
     // Toggle on click
     toggle.addEventListener('click', () => {
-      const current = document.documentElement.getAttribute('data-theme') || 'light';
+      const current = document.documentElement.getAttribute('data-theme') || 'dark';
       setTheme(current === 'dark' ? 'light' : 'dark');
     });
     
