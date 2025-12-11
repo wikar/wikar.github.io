@@ -1,8 +1,43 @@
-excerpt_separator: ""
-highlighter: rouge
-markdown: kramdown
-url: http://wikar.se
+# Site settings
 title: Daniel Wikar
-tagline: Personal blog about Analytics, Big Data, Microsoft and IT
-description: This is where I blog.
+tagline: Analytics, Big Data, Microsoft and IT
+description: Personal blog about Analytics, Big Data, Microsoft and IT
+url: https://wikar.se
+baseurl: ""
+
+# Author
+author:
+  name: Daniel Wikar
+  bio: Head of Business Intelligence & Analytics, passionate about data and technology.
+  avatar: /assets/images/avatar.png
+
+# Social links (leave empty to hide)
+social:
+  linkedin: danielwikar
+  github: wikar
+  twitter: ""
+  email: ""
+
+# Build settings
+markdown: kramdown
+highlighter: rouge
+excerpt_separator: "\n\n"
 paginate: 5
+
+# Plugins
+plugins:
+  - jekyll-paginate
+  - jekyll-feed
+  - jekyll-seo-tag
+
+# Disqus
+disqus:
+  shortname: dwikar
+
+# Exclude from build
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor
+  - README.md

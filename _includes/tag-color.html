@@ -1,0 +1,20 @@
+{%- comment -%}
+Assigns a consistent color to a tag based on its name.
+Usage: {% include tag-color.html tag=tag_name %}
+Returns: assigns 'tag_color' variable
+{%- endcomment -%}
+{%- assign tag_colors = "mauve,pink,red,peach,yellow,green,teal,sky,sapphire,blue,lavender" | split: "," -%}
+{%- assign tag_name = include.tag | downcase -%}
+{%- assign tag_length = tag_name | size -%}
+{%- assign first_char = tag_name | slice: 0 -%}
+{%- assign alphabet = "abcdefghijklmnopqrstuvwxyz" | split: "" -%}
+{%- assign char_value = 0 -%}
+{%- for letter in alphabet -%}
+  {%- if letter == first_char -%}
+    {%- assign char_value = forloop.index -%}
+    {%- break -%}
+  {%- endif -%}
+{%- endfor -%}
+{%- assign hash_value = char_value | plus: tag_length -%}
+{%- assign color_index = hash_value | modulo: 11 -%}
+{%- assign tag_color = tag_colors[color_index] -%}

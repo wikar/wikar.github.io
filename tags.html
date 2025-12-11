@@ -1,0 +1,100 @@
+---
+layout: default
+title: Tags
+permalink: /tags/
+---
+
+<div class="tags-page">
+  <header class="page-header">
+    <h1 class="page-title" id="page-title">All Posts</h1>
+  </header>
+
+  <div class="tags-list">
+    {% assign all_tags = "" | split: "" %}
+    {% for post in site.posts %}
+      {% for category in post.categories %}
+        {% unless all_tags contains category %}
+          {% assign all_tags = all_tags | push: category %}
+        {% endunless %}
+      {% endfor %}
+      {% for tag in post.tags %}
+        {% unless all_tags contains tag %}
+          {% assign all_tags = all_tags | push: tag %}
+        {% endunless %}
+      {% endfor %}
+    {% endfor %}
+    
+    <a href="/tags/" class="tag" data-tag="all" data-color="lavender">All</a>
+    {% assign sorted_tags = all_tags | sort_natural %}
+    {% for tag in sorted_tags %}
+      {% include tag-color.html tag=tag %}
+      <a href="/tags/?tag={{ tag | downcase | url_encode }}" class="tag" data-tag="{{ tag | downcase }}" data-color="{{ tag_color }}">{{ tag }}</a>
+    {% endfor %}
+  </div>
+
+  <section class="posts-grid" id="posts-container">
+    {% for post in site.posts %}
+    <article class="post-card" data-categories="{{ post.categories | join: ' ' | downcase }}" data-tags="{{ post.tags | join: ' ' | downcase }}">
+      {% if post.categories.size > 0 %}
+      {% assign cat = post.categories | first %}
+      {% include tag-color.html tag=cat %}
+      <div class="post-card-tag">
+        <a href="/tags/?tag={{ cat | downcase | url_encode }}" class="tag" data-color="{{ tag_color }}">{{ cat }}</a>
+      </div>
+      {% endif %}
+      
+      <h2 class="post-card-title">
+        <a href="{{ post.url }}">{{ post.title }}</a>
+      </h2>
+      
+      <p class="post-card-excerpt">
+        {{ post.excerpt | strip_html | truncate: 200 }}
+      </p>
+      
+      <div class="post-card-meta">
+        <span>{{ post.date | date: "%Y-%m-%d" }}</span>
+        <span>·</span>
+        <span>{% assign words = post.content | number_of_words %}{% if words < 200 %}1{% else %}{{ words | divided_by: 200 }}{% endif %} MIN READ</span>
+      </div>
+    </article>
+    {% endfor %}
+  </section>
+</div>
+
+<script>
+(function() {
+  // Get tag from URL
+  const urlParams = new URLSearchParams(window.location.search);
+  const selectedTag = urlParams.get('tag');
+  
+  if (selectedTag && selectedTag !== 'all') {
+    const tag = selectedTag.toLowerCase();
+    
+    // Update page title
+    document.getElementById('page-title').textContent = selectedTag.charAt(0).toUpperCase() + selectedTag.slice(1);
+    
+    // Highlight active tag
+    document.querySelectorAll('.tags-list .tag').forEach(tagEl => {
+      if (tagEl.dataset.tag === tag) {
+        tagEl.classList.add('active');
+      }
+    });
+    
+    // Filter posts
+    document.querySelectorAll('.post-card').forEach(post => {
+      const categories = post.dataset.categories || '';
+      const tags = post.dataset.tags || '';
+      const allTags = (categories + ' ' + tags).toLowerCase();
+      
+      if (allTags.includes(tag)) {
+        post.style.display = '';
+      } else {
+        post.style.display = 'none';
+      }
+    });
+  } else {
+    // Show "All" as active
+    document.querySelector('.tags-list .tag[data-tag="all"]')?.classList.add('active');
+  }
+})();
+</script>
