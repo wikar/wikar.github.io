@@ -591,7 +591,8 @@ img {
   background-color: var(--color-bg-secondary);
   border: 1px solid var(--color-border);
   border-radius: var(--border-radius);
-  overflow-x: auto;
+  white-space: pre-wrap;
+  word-wrap: break-word;
 }
 
 .post-content pre code {
@@ -906,10 +907,15 @@ a.pagination-item:hover {
 
 /* Syntax Highlighting - Catppuccin Latte (Light) */
 .highlight {
-  background-color: #e6e9ef;
+  background-color: #dce0e8;
   border-radius: var(--border-radius);
   padding: var(--spacing-md);
-  overflow-x: auto;
+}
+
+.highlight pre,
+.highlight code {
+  white-space: pre-wrap;
+  word-wrap: break-word;
 }
 
 .highlight pre {
@@ -949,7 +955,7 @@ a.pagination-item:hover {
 
 /* Syntax Highlighting - Catppuccin Mocha (Dark) */
 [data-theme="dark"] .highlight {
-  background-color: #1e1e2e;
+  background-color: #181825;
 }
 
 [data-theme="dark"] .highlight .c, [data-theme="dark"] .highlight .c1, [data-theme="dark"] .highlight .cm { color: #6c7086; font-style: italic; }
@@ -981,6 +987,50 @@ a.pagination-item:hover {
 [data-theme="dark"] .highlight .ge { font-style: italic; }
 [data-theme="dark"] .highlight .gs { font-weight: 600; }
 [data-theme="dark"] .highlight .err { color: #f38ba8; }
+
+/* Copy Code Button */
+.highlight {
+  position: relative;
+}
+
+.copy-code-button {
+  position: absolute;
+  top: var(--spacing-sm);
+  right: var(--spacing-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  background-color: var(--color-bg-tertiary);
+  border: 1px solid var(--color-border);
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  color: var(--color-text-muted);
+  opacity: 0;
+  transition: all var(--transition-fast);
+}
+
+.highlight:hover .copy-code-button {
+  opacity: 1;
+}
+
+.copy-code-button:hover {
+  color: var(--color-heading);
+  background-color: var(--color-bg-secondary);
+  border-color: var(--color-accent);
+}
+
+.copy-code-button.copied {
+  color: var(--color-success);
+  border-color: var(--color-success);
+}
+
+.copy-code-button svg {
+  width: 16px;
+  height: 16px;
+}
 
 /* Disqus Styling */
 #disqus_thread {
