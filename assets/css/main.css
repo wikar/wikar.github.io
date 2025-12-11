@@ -907,9 +907,8 @@ a.pagination-item:hover {
 
 /* Syntax Highlighting - Catppuccin Mocha (Dark) - Default */
 .highlight {
-  background-color: #181825;
+  margin: var(--spacing-lg) 0;
   border-radius: var(--border-radius);
-  padding: var(--spacing-md);
 }
 
 .highlight pre,
@@ -919,7 +918,9 @@ a.pagination-item:hover {
 }
 
 .highlight pre {
-  background-color: transparent !important;
+  background-color: #181825;
+  border-radius: var(--border-radius);
+  padding: var(--spacing-md);
   margin: 0;
 }
 
@@ -954,8 +955,8 @@ a.pagination-item:hover {
 .highlight .err { color: #f38ba8; } /* Error */
 
 /* Syntax Highlighting - Catppuccin Latte (Light) */
-[data-theme="light"] .highlight {
-  background-color: #dce0e8;
+[data-theme="light"] .highlight pre {
+  background-color: #ffffff;
 }
 
 [data-theme="light"] .highlight .c, [data-theme="light"] .highlight .c1, [data-theme="light"] .highlight .cm { color: #8c8fa1; font-style: italic; }
