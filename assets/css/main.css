@@ -1023,50 +1023,17 @@ a.pagination-item:hover {
   height: 16px;
 }
 
-/* Disqus Styling - Theme aware */
+/* Giscus Comments Section */
 .comments-section {
   margin-top: var(--spacing-2xl);
   padding-top: var(--spacing-xl);
   border-top: 1px solid var(--color-border);
-  color: var(--color-text);
 }
 
 .comments-section h2 {
   font-size: 1.5rem;
   margin-bottom: var(--spacing-lg);
   color: var(--color-heading);
-}
-
-#disqus_thread {
-  margin-top: var(--spacing-xl);
-  color: var(--color-text);
-}
-
-.dsq-brlink {
-  color: var(--color-text-muted);
-}
-
-.dsq-brlink span {
-  color: var(--color-text);
-}
-
-.comments-section a {
-  color: var(--color-link);
-}
-
-/* Light mode: ensure high contrast text for Disqus detection */
-[data-theme="light"] .comments-section,
-[data-theme="light"] .comments-section h2,
-[data-theme="light"] #disqus_thread {
-  color: #4c4f69;
-}
-
-[data-theme="light"] .dsq-brlink {
-  color: #6c6f85;
-}
-
-[data-theme="light"] .comments-section a {
-  color: #1e66f5;
 }
 
 /* Tags Page */

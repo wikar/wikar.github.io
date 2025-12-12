@@ -64,24 +64,22 @@
       return prefersDark.matches === false ? 'light' : 'dark';
     }
     
-    function reloadDisqus() {
-      if (typeof DISQUS !== 'undefined') {
-        DISQUS.reset({
-          reload: true,
-          config: function() {
-            this.page.url = window.location.href;
-            this.page.identifier = window.location.pathname;
-          }
-        });
+    function setGiscusTheme(theme) {
+      const giscusTheme = theme === 'light' ? 'catppuccin_latte' : 'catppuccin_mocha';
+      const iframe = document.querySelector('iframe.giscus-frame');
+      if (iframe) {
+        iframe.contentWindow.postMessage(
+          { giscus: { setConfig: { theme: giscusTheme } } },
+          'https://giscus.app'
+        );
       }
     }
     
-    function setTheme(theme, reload) {
+    function setTheme(theme, updateGiscus) {
       document.documentElement.setAttribute('data-theme', theme);
       localStorage.setItem('theme', theme);
-      if (reload) {
-        // Small delay to let CSS update before Disqus re-detects
-        setTimeout(reloadDisqus, 100);
+      if (updateGiscus) {
+        setGiscusTheme(theme);
       }
     }
     
