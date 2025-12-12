@@ -64,25 +64,41 @@
       return prefersDark.matches === false ? 'light' : 'dark';
     }
     
-    function setTheme(theme) {
+    function reloadDisqus() {
+      if (typeof DISQUS !== 'undefined') {
+        DISQUS.reset({
+          reload: true,
+          config: function() {
+            this.page.url = window.location.href;
+            this.page.identifier = window.location.pathname;
+          }
+        });
+      }
+    }
+    
+    function setTheme(theme, reload) {
       document.documentElement.setAttribute('data-theme', theme);
       localStorage.setItem('theme', theme);
+      if (reload) {
+        // Small delay to let CSS update before Disqus re-detects
+        setTimeout(reloadDisqus, 100);
+      }
     }
     
     // Set initial theme (dark is default)
     const initialTheme = getTheme();
-    setTheme(initialTheme);
+    setTheme(initialTheme, false);
     
     // Toggle on click
     toggle.addEventListener('click', () => {
       const current = document.documentElement.getAttribute('data-theme') || 'dark';
-      setTheme(current === 'dark' ? 'light' : 'dark');
+      setTheme(current === 'dark' ? 'light' : 'dark', true);
     });
     
     // Listen for system preference changes
     prefersDark.addEventListener('change', (e) => {
       if (!localStorage.getItem('theme')) {
-        setTheme(e.matches ? 'dark' : 'light');
+        setTheme(e.matches ? 'dark' : 'light', true);
       }
     });
   })();
