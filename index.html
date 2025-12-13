@@ -25,7 +25,7 @@ title: Home
     <div class="post-card-meta">
       <span>{{ post.date | date: "%Y-%m-%d" }}</span>
       <span>·</span>
-      <span>{% assign words = post.content | number_of_words %}{% if words < 200 %}1{% else %}{{ words | divided_by: 200 }}{% endif %} MIN READ</span>
+      <span>{% include reading-time.html content=post.content %}</span>
     </div>
   </article>
   {% endfor %}
@@ -73,5 +73,3 @@ title: Home
     </span>
   {% endif %}
 </nav>
-
-{% include disqus-comment-count.html %}

@@ -30,10 +30,6 @@ plugins:
   - jekyll-feed
   - jekyll-seo-tag
 
-# Disqus
-disqus:
-  shortname: dwikar
-
 # Exclude from build
 exclude:
   - Gemfile

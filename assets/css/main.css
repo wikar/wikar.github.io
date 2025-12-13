@@ -3,9 +3,6 @@
    With Catppuccin Color Scheme
    ============================================ */
 
-/* Import Catppuccin Palette */
-@import url('https://unpkg.com/@catppuccin/palette/css/catppuccin.css');
-
 /* CSS Variables for easy theming */
 :root {
   /* Dark theme (Catppuccin Mocha) - Default */
@@ -142,10 +139,6 @@ img {
   max-width: var(--max-width);
   margin: 0 auto;
   padding: 0 var(--spacing-lg);
-}
-
-.container-wide {
-  max-width: var(--max-width-wide);
 }
 
 /* Header */
@@ -315,29 +308,6 @@ img {
 .site-main {
   min-height: calc(100vh - 200px);
   padding: var(--spacing-3xl) 0;
-}
-
-/* Hero Section */
-.hero {
-  text-align: center;
-  padding: var(--spacing-3xl) 0;
-  margin-bottom: var(--spacing-2xl);
-}
-
-.hero-title {
-  font-size: 2.5rem;
-  margin-bottom: var(--spacing-md);
-  background: linear-gradient(135deg, var(--color-heading) 0%, var(--color-accent) 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-
-.hero-subtitle {
-  font-size: 1.25rem;
-  color: var(--color-text-secondary);
-  max-width: 600px;
-  margin: 0 auto;
 }
 
 /* Post Cards */
@@ -713,43 +683,6 @@ img {
   letter-spacing: 0.5px;
 }
 
-/* Legacy Related Posts List */
-.related-posts-list {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.related-posts-list li {
-  margin-bottom: var(--spacing-md);
-  padding: var(--spacing-md);
-  background-color: var(--color-bg-secondary);
-  border-radius: var(--border-radius);
-  border: 1px solid var(--color-border);
-  transition: border-color var(--transition-fast);
-}
-
-.related-posts-list li:hover {
-  border-color: var(--color-accent);
-}
-
-.related-posts-list a {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  color: var(--color-heading);
-}
-
-.related-posts-list a:hover {
-  text-decoration: none;
-  color: var(--color-accent);
-}
-
-.related-posts-list small {
-  color: var(--color-text-muted);
-  font-size: 0.875rem;
-}
-
 /* Post Share */
 .post-share {
   display: flex;
@@ -859,6 +792,10 @@ a.pagination-item:hover {
   margin-bottom: var(--spacing-xl);
 }
 
+.error-page .icon-back {
+  transform: rotate(180deg);
+}
+
 /* Utility Classes */
 .text-center { text-align: center; }
 .text-muted { color: var(--color-text-muted); }
@@ -876,10 +813,6 @@ a.pagination-item:hover {
   h1 { font-size: 1.875rem; }
   h2 { font-size: 1.5rem; }
   h3 { font-size: 1.25rem; }
-  
-  .hero-title {
-    font-size: 2rem;
-  }
   
   .post-title,
   .page-title {
@@ -1112,4 +1045,14 @@ a.pagination-item:hover {
 
 .site-main {
   animation: fadeIn 0.5s ease-out;
+}
+
+/* Accessibility: respect reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .site-main {
+    animation: none;
+  }
 }
