@@ -29,11 +29,11 @@ permalink: /tags/
       {% endfor %}
     {% endfor %}
     
-    <a href="/tags/" class="tag" data-tag="all" data-color="lavender">All</a>
+    <a href="/tags/" class="tag" data-tag="all" data-color="lavender">ALL</a>
     {% assign sorted_tags = all_tags | sort_natural %}
     {% for tag in sorted_tags %}
       {% include tag-color.html tag=tag %}
-      <a href="/tags/?tag={{ tag | downcase | url_encode }}" class="tag" data-tag="{{ tag | downcase }}" data-color="{{ tag_color }}">{{ tag }}</a>
+      <a href="/tags/?tag={{ tag | downcase | url_encode }}" class="tag" data-tag="{{ tag | downcase }}" data-color="{{ tag_color }}">{{ tag | upcase }}</a>
     {% endfor %}
   </div>
 
@@ -44,7 +44,7 @@ permalink: /tags/
       {% assign cat = post.categories | first %}
       {% include tag-color.html tag=cat %}
       <div class="post-card-tag">
-        <a href="/tags/?tag={{ cat | downcase | url_encode }}" class="tag" data-color="{{ tag_color }}">{{ cat }}</a>
+        <a href="/tags/?tag={{ cat | downcase | url_encode }}" class="tag" data-color="{{ tag_color }}">{{ cat | upcase }}</a>
       </div>
       {% endif %}
       
