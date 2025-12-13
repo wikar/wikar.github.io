@@ -1009,6 +1009,12 @@ a.pagination-item:hover {
   color: var(--color-bg);
 }
 
+.tags-list .show-more-tags {
+  cursor: pointer;
+  border: none;
+  font-family: inherit;
+}
+
 .tags-page .posts-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
