@@ -41,8 +41,7 @@ permalink: /tags/
 
     {% assign sorted_tags = entries | sort | reverse %}
     {% assign total_tags = sorted_tags | size %}
-    
-    <a href="/tags/" class="tag" data-tag="all" data-color="lavender">ALL</a>
+
     {% for tag_entry in sorted_tags limit:25 %}
       {% assign parts = tag_entry | split: "|" %}
       {% assign tag_name = parts[1] %}
@@ -95,7 +94,7 @@ permalink: /tags/
   const urlParams = new URLSearchParams(window.location.search);
   const selectedTag = urlParams.get('tag');
   
-  if (selectedTag && selectedTag !== 'all') {
+  if (selectedTag && selectedTag.toLowerCase() !== 'all') {
     const tag = selectedTag.toLowerCase();
     
     // Update page title
@@ -120,9 +119,6 @@ permalink: /tags/
         post.style.display = 'none';
       }
     });
-  } else {
-    // Show "All" as active
-    document.querySelector('.tags-list .tag[data-tag="all"]')?.classList.add('active');
   }
   
   // Show more tags functionality
