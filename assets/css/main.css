@@ -1015,6 +1015,10 @@ a.pagination-item:hover {
   font-family: inherit;
 }
 
+.tags-list .hidden-tag {
+  display: none;
+}
+
 .tags-page .posts-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));

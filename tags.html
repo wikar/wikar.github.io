@@ -55,14 +55,12 @@ permalink: /tags/
     {% endfor %}
     {% if total_tags > 25 %}
     <button class="tag show-more-tags" data-color="lavender" id="show-more-tags">...</button>
-    <span class="hidden-tags" id="hidden-tags" style="display: none;">
-      {% for tag_entry in sorted_tags offset:25 %}
-        {% assign parts = tag_entry | split: "|" %}
-        {% assign tag_name = parts[0] %}
-        {% include tag-color.html tag=tag_name %}
-        <a href="/tags/?tag={{ tag_name | url_encode }}" class="tag" data-tag="{{ tag_name }}" data-color="{{ tag_color }}">{{ tag_name | upcase }}</a>
-      {% endfor %}
-    </span>
+    {% for tag_entry in sorted_tags offset:25 %}
+      {% assign parts = tag_entry | split: "|" %}
+      {% assign tag_name = parts[0] %}
+      {% include tag-color.html tag=tag_name %}
+      <a href="/tags/?tag={{ tag_name | url_encode }}" class="tag hidden-tag" data-tag="{{ tag_name }}" data-color="{{ tag_color }}">{{ tag_name | upcase }}</a>
+    {% endfor %}
     {% endif %}
   </div>
 
@@ -133,10 +131,11 @@ permalink: /tags/
   
   // Show more tags functionality
   const showMoreBtn = document.getElementById('show-more-tags');
-  const hiddenTags = document.getElementById('hidden-tags');
-  if (showMoreBtn && hiddenTags) {
+  if (showMoreBtn) {
     showMoreBtn.addEventListener('click', function() {
-      hiddenTags.style.display = 'inline';
+      document.querySelectorAll('.tags-list .hidden-tag').forEach(tag => {
+        tag.classList.remove('hidden-tag');
+      });
       showMoreBtn.style.display = 'none';
     });
   }
