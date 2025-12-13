@@ -10,30 +10,47 @@ permalink: /tags/
   </header>
 
   <div class="tags-list">
-    {% assign all_tags = "" | split: "" %}
+    {% comment %}
+    Build a list of tags with their post counts, then sort by count descending and show top 25
+    {% endcomment %}
+    {% assign tag_counts = "" | split: "" %}
     {% assign all_tags_lower = "" | split: "" %}
+    
     {% for post in site.posts %}
       {% for category in post.categories %}
         {% assign category_lower = category | downcase %}
         {% unless all_tags_lower contains category_lower %}
-          {% assign all_tags = all_tags | push: category %}
           {% assign all_tags_lower = all_tags_lower | push: category_lower %}
         {% endunless %}
       {% endfor %}
       {% for tag in post.tags %}
         {% assign tag_lower = tag | downcase %}
         {% unless all_tags_lower contains tag_lower %}
-          {% assign all_tags = all_tags | push: tag %}
           {% assign all_tags_lower = all_tags_lower | push: tag_lower %}
         {% endunless %}
       {% endfor %}
     {% endfor %}
     
+    {% for tag_name in all_tags_lower %}
+      {% assign count = 0 %}
+      {% for post in site.posts %}
+        {% assign post_tags = post.categories | concat: post.tags | join: ' ' | downcase %}
+        {% if post_tags contains tag_name %}
+          {% assign count = count | plus: 1 %}
+        {% endif %}
+      {% endfor %}
+      {% assign tag_entry = tag_name | append: "|" | append: count %}
+      {% assign tag_counts = tag_counts | push: tag_entry %}
+    {% endfor %}
+    
+    {% assign sorted_tags = tag_counts | sort | reverse %}
+    
     <a href="/tags/" class="tag" data-tag="all" data-color="lavender">ALL</a>
-    {% assign sorted_tags = all_tags | sort_natural %}
-    {% for tag in sorted_tags %}
-      {% include tag-color.html tag=tag %}
-      <a href="/tags/?tag={{ tag | downcase | url_encode }}" class="tag" data-tag="{{ tag | downcase }}" data-color="{{ tag_color }}">{{ tag | upcase }}</a>
+    {% for tag_entry in sorted_tags limit:25 %}
+      {% assign parts = tag_entry | split: "|" %}
+      {% assign tag_name = parts[0] %}
+      {% include tag-color.html tag=tag_name %}
+      <a href="/tags/?tag={{ tag_name | url_encode }}" class="tag" data-tag="{{ tag_name }}" data-color="{{ tag_color }}">{{ tag_name | upcase }}</a>
     {% endfor %}
   </div>
 
