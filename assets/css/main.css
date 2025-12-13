@@ -1015,7 +1015,7 @@ a.pagination-item:hover {
   font-family: inherit;
 }
 
-.tags-list .hidden-tag {
+.tags-list .tag.hidden-tag {
   display: none;
 }
 
